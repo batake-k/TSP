@@ -9,9 +9,10 @@ namespace Core
         public FullSearch(in Data data) : base(in data)
         {
         }
+
         public override bool run()
         {
-            int num_cities = data.num_cities;
+            int num_cities = data.num_of_cities;
             // 2都市目以降のルート
             int[] sub_route = new int[num_cities - 1];
 

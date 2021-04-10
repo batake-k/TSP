@@ -7,9 +7,9 @@ namespace Core
     {
         static void Main(string[] args)
         {
-            const string input_file = "../Data/sample.tsp";
+            const string input_file = "../../../../Data/a280.tsp";
             Data data = new Data(input_file);
-            Solver solver = new FullSearch(in data);
+            Solver solver = new GreedyAlgorithm(in data);
 
             bool is_solved = solver.run();
 

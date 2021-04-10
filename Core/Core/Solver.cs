@@ -4,20 +4,18 @@ using System.Text;
 
 namespace Core
 {
-    class Solver
+    abstract class Solver
     {
+        protected Data data;
+        public float calculated_best_distance { set; get; } = float.MaxValue;
+        public int[] calculated_best_route { set; get; } = new int[0];
+
         public Solver(in Data _data)
         {
             data = _data;
-
-            calculated_best_distance = float.MaxValue;
-            calculated_best_route = new int[0];
         }
 
-        public virtual bool run()
-        {
-            return false;
-        }
+        public abstract bool run();
 
         protected float calculateRouteDistance(in int[] route)
         {
@@ -30,10 +28,5 @@ namespace Core
 
             return distance;
         }
-
-        protected Data data;
-
-        public float calculated_best_distance { set; get; }
-        public int[] calculated_best_route { set; get; }
     }
 }
